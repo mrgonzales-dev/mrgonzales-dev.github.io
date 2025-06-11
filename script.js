@@ -7,31 +7,50 @@ const logo = document.getElementById('navbar-logo');
 
 function updateNavbar() {
 	const homeRect = homeSection.getBoundingClientRect();
+	const isMobile = window.innerWidth < 640; // tailwind sm breakpoint
 
-	if (homeRect.bottom > window.innerHeight / 2) {
-		navbar.classList.remove('w-full', 'bg-zinc/30', 'text-white');
-		navbar.classList.add('w-[60%]', 'bg-white/30', 'text-black');
+	if (isMobile) {
+		// Mobile: always full width
+		navbar.classList.remove('w-[30%]', 'bg-white/30', 'text-black', 'bg-zinc/30', 'text-white');
+		navbar.classList.add('w-full');
 
-		document.querySelectorAll('#navbar a').forEach(link => {
-			link.classList.remove('text-white');
-			link.classList.add('text-black');
-		});
-
-		// Change logo to dark version
-		logo.src = 'asset/SVG/mrg-logo-asset.svg'; // or your black version path
-
+		// Optional: style adjustment based on scroll position (optional)
+		if (homeRect.bottom > window.innerHeight / 2) {
+			navbar.classList.add('bg-white/30', 'text-black');
+			logo.src = 'asset/SVG/mrg-logo-asset.svg';
+			document.querySelectorAll('#navbar a').forEach(link => {
+				link.classList.remove('text-white');
+				link.classList.add('text-black');
+			});
+		} else {
+			navbar.classList.add('bg-zinc/30', 'text-white');
+			logo.src = 'asset/SVG/mrg-logo-asset-white.svg';
+			document.querySelectorAll('#navbar a').forEach(link => {
+				link.classList.remove('text-black');
+				link.classList.add('text-white');
+			});
+		}
 	} else {
-		navbar.classList.remove('w-[60%]', 'bg-white/30', 'text-black');
-		navbar.classList.add('w-full', 'bg-zinc/30', 'text-white');
+		// Desktop: shrink or expand based on scroll
+		if (homeRect.bottom > window.innerHeight / 2) {
+			navbar.classList.remove('w-full', 'bg-zinc/30', 'text-white');
+			navbar.classList.add('w-[30%]', 'bg-white/30', 'text-black');
 
-		document.querySelectorAll('#navbar a').forEach(link => {
-			link.classList.remove('text-black');
-			link.classList.add('text-white');
-		});
+			logo.src = 'asset/SVG/mrg-logo-asset.svg';
+			document.querySelectorAll('#navbar a').forEach(link => {
+				link.classList.remove('text-white');
+				link.classList.add('text-black');
+			});
+		} else {
+			navbar.classList.remove('w-[30%]', 'bg-white/30', 'text-black');
+			navbar.classList.add('w-full', 'bg-zinc/30', 'text-white');
 
-		// Change logo to white version
-
-		logo.src = 'asset/SVG/mrg-logo-asset-white.svg'; // or your white version path
+			logo.src = 'asset/SVG/mrg-logo-asset-white.svg';
+			document.querySelectorAll('#navbar a').forEach(link => {
+				link.classList.remove('text-black');
+				link.classList.add('text-white');
+			});
+		}
 	}
 }
 

@@ -59,10 +59,10 @@
 
 	<!-- Navbar -->
 	<nav id="navbar"
-		class="fixed top-0 right-0  transition-all duration-1000 ease-in-out w-full z-30 bg-white/30 backdrop-blur-md px-4 sm:px-10 py-3">
-		<div class="max-w-7xl mx-auto flex items-center justify-between">
+		class="rounded-xl fixed top-0 right-0  transition-all duration-1000 ease-in-out z-30 bg-white/30 backdrop-blur-md px-5 sm:px-5 py-3">
+		<div class="max-w-8xl mx-auto flex items-center justify-between">
 			<div class="flex items-center justify-between w-full">
-				<img id="navbar-logo" src="asset/SVG/mrg-logo-asset.svg" alt="MRG Logo" class="h-5" />
+				<img id="navbar-logo" src="asset/SVG/mrg-logo-asset.svg" alt="MRG Logo" class="h-5 justify-right" />
 				<button id="nav-toggle" class="sm:hidden text-black focus:outline-none">
 					<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
 						<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
@@ -81,29 +81,40 @@
 
 	<!-- Home Section-->
 	<section id="home"
-		class="overflow-hidden min-h-screen px-4 sm:px-6 lg:px-8 py-16 flex flex-col justify-center bg-gradient-to-b from-white via-gray-100 to-gray-400 relative">
+		class="overflow-hidden min-h-screen px-4 sm:px-6 bg-gradient-to-br from-white via-gray-50 to-gray-300 flex justify-center items-center relative">
 
-		<!-- Scrolling Text -->
+		<!-- Scrolling Text Bar -->
 		<div
-			class="hidden lg:flex w-screen h-8 bg-gradient-to-r from-black via-gray-900 to-gray-800 absolute bottom-0 overflow-hidden">
+			class="w-full h-8 bg-gradient-to-r from-gray-900 via-zinc-900 to-gray-900 absolute bottom-0 flex items-center overflow-hidden">
 			<div id="scrolling-text"
-				class="flex whitespace-nowrap text-white font-bold font-mono uppercase text-lg animate-scroll-text">
-				<!-- JavaScript inserts scroll text here -->
+				class="flex whitespace-nowrap text-white font-bold font-mono uppercase text-sm sm:text-base md:text-lg"
+				style="animation: scroll-text 20s linear infinite;">
+				<!-- JavaScript will insert repeated spans here -->
 			</div>
 		</div>
 
-		<div class="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center lg:items-end gap-10">
+		<!-- Main Content Container -->
+		<div
+			class="max-w-8xl w-full flex h-screen flex-col items-center justify-center gap-8 lg:flex-row lg:justify-between">
+
+			<!-- Image (hidden on mobile) -->
+			<div class="hidden lg:flex flex-1 justify-center">
+				<img src="asset/PNG/right-side-halfbody-asset.png" alt="Keneth Gonzales"
+					class="w-full max-w-[570px] object-contain" />
+			</div>
 
 			<!-- Text Content -->
-			<div class="text-center lg:text-left flex-1 flex flex-col justify-center items-center lg:items-start">
-				<p class="text-2xl sm:text-3xl lg:text-4xl text-black">Hi, I'm</p>
-				<h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-black mt-2">KENETH GONZALES</h1>
-				<p class="text-xl sm:text-2xl lg:text-3xl text-gray-700 mt-2">Software Developer</p>
+			<div class="text-center px-2 flex-1 flex flex-col items-center justify-center lg:items-start">
+				<p class="text-3xl sm:text-3xl text-gray-900">Hi, I'm</p>
+				<h1 class="text-5xl sm:text-6xl lg:text-6xl font-extrabold text-gray-900 mt-2">
+					KENETH GONZALES
+				</h1>
+				<p class="text-xl sm:text-2xl text-gray-700 mt-2">Software Developer</p>
 
 				<!-- Buttons -->
-				<div class="mt-6 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+				<div class="mt-6 flex flex-col sm:flex-row gap-4">
 					<a href="#projects"
-						class="bg-black text-white px-6 py-2 rounded-full font-medium hover:bg-primary transition">
+						class="bg-black text-white px-6 py-2 rounded-full font-medium hover:bg-gray-800 transition">
 						PROJECTS &lt;/&gt;
 					</a>
 					<a href="#contact"
@@ -113,11 +124,6 @@
 				</div>
 			</div>
 
-			<!-- Image (hidden on small screens) -->
-			<div class="hidden lg:flex flex-shrink-0 justify-end">
-				<img src="asset/PNG/right-side-halfbody-asset.png" alt="Keneth Gonzales"
-					class="w-[450px] xl:w-[550px] object-contain" />
-			</div>
 		</div>
 	</section>
 
@@ -129,7 +135,7 @@
 			<!-- Profile & Socials -->
 			<div class="rounded-2xl p-4 flex flex-col items-center">
 				<img src="asset/PNG/circle-image.png" alt="Keneth Gonzales"
-					class="w-64 h-64 sm:w-80 sm:h-80 rounded-full object-cover border-2 border-gray-700 shadow-[0_0_60px_rgba(255,255,255,0.20)]" />
+					class="w-64 h-64 sm:w-80 sm:h-80 lg:w-[500px] lg:h-auto rounded-full object-cover border-2 border-gray-700 shadow-[0_0_60px_rgba(255,255,255,0.20)]" />
 
 				<div class="flex gap-6 mt-6">
 					<a href="https://facebook.com" target="_blank">
