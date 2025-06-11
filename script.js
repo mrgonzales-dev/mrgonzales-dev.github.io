@@ -1,26 +1,42 @@
 
 
 // ====== NAVBAR TRANSITION =======
-		const navbar = document.getElementById('navbar');
-		const homeSection = document.getElementById('home');
+const navbar = document.getElementById('navbar');
+const homeSection = document.getElementById('home');
+const logo = document.getElementById('navbar-logo');
 
-		function updateNavbar() {
-			const homeRect = homeSection.getBoundingClientRect();
+function updateNavbar() {
+	const homeRect = homeSection.getBoundingClientRect();
 
-			if (homeRect.bottom > window.innerHeight / 2) {
-				navbar.classList.remove('w-full');
-				navbar.classList.add('w-[60%]');
-			} else {
-				navbar.classList.remove('bg-zinc/30');
-			
-				navbar.classList.add('w-full');
-    navbar.classList.remove('w-[60%]');
-				navbar.classList.add('w-full');
-			}
-		}
+	if (homeRect.bottom > window.innerHeight / 2) {
+		navbar.classList.remove('w-full', 'bg-zinc/30', 'text-white');
+		navbar.classList.add('w-[60%]', 'bg-white/30', 'text-black');
 
-		window.addEventListener('scroll', updateNavbar);
-		window.addEventListener('load', updateNavbar);
+		document.querySelectorAll('#navbar a').forEach(link => {
+			link.classList.remove('text-white');
+			link.classList.add('text-black');
+		});
+
+		// Change logo to dark version
+		logo.src = 'asset/SVG/mrg-logo-asset.svg'; // or your black version path
+
+	} else {
+		navbar.classList.remove('w-[60%]', 'bg-white/30', 'text-black');
+		navbar.classList.add('w-full', 'bg-zinc/30', 'text-white');
+
+		document.querySelectorAll('#navbar a').forEach(link => {
+			link.classList.remove('text-black');
+			link.classList.add('text-white');
+		});
+
+		// Change logo to white version
+
+		logo.src = 'asset/SVG/mrg-logo-asset-white.svg'; // or your white version path
+	}
+}
+
+window.addEventListener('scroll', updateNavbar);
+window.addEventListener('load', updateNavbar);
 // =================================
 
 
@@ -45,10 +61,10 @@ function onScroll() {
 
   navbarLinks.forEach((link, idx) => {
     if (idx === currentSectionIndex) {
-      link.classList.add('text-black', 'font-semibold');
+      link.classList.add('text-black', 'font-semibold', 'underline');
       link.classList.remove('text-gray-700');
     } else {
-      link.classList.remove('text-black', 'font-semibold');
+      link.classList.remove('text-black', 'font-semibold', 'underline');
       link.classList.add('text-gray-700');
     }
   });
