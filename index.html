@@ -24,14 +24,6 @@
 				}
 			}
 		}
-
-		//  ============ Collapse Navbar =============
-		const navToggle = document.getElementById('nav-toggle');
-		const navMenu = document.getElementById('nav-menu');
-		navToggle.addEventListener('click', () => {
-			navMenu.classList.toggle('hidden');
-		});
-		// ===========================================
 	</script>
 
 	<style>
@@ -59,18 +51,13 @@
 
 	<!-- Navbar -->
 	<nav id="navbar"
-		class="w-full rounded-xl fixed top-0 right-0  transition-all duration-1000 ease-in-out z-30 bg-zinc/30 backdrop-blur-md px-10 sm:px-10 py-3">
+		class="w-full rounded-xl fixed top-0 right-0 transition-all duration-1000 ease-in-out z-30 bg-zinc/30 backdrop-blur-md px-10 sm:px-10 py-3">
 		<div class="max-w-8xl mx-auto flex items-center justify-between">
 			<div class="flex items-center justify-between w-full">
 				<img id="navbar-logo" src="asset/SVG/mrg-logo-asset-white.svg" alt="MRG Logo" class="h-5 justify-right" />
-				<button id="nav-toggle" class="sm:hidden text-black focus:outline-none">
-					<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-					</svg>
-				</button>
 			</div>
 			<ul id="nav-menu"
-				class="hidden sm:flex sm:flex-row flex-col sm:space-x-8 space-y-4 sm:space-y-0 mt-4 sm:mt-0 sm:ml-10 text-center sm:text-left">
+				class="flex flex-col sm:flex-row sm:space-x-8 space-y-4 sm:space-y-0 mt-4 sm:mt-0 sm:ml-10 text-center sm:text-left">
 				<li><a href="#home" class="block text-white hover:text-primary">Home</a></li>
 				<li><a href="#about" class="block text-white hover:text-primary">About</a></li>
 				<li><a href="#projects" class="block text-white hover:text-primary">Projects</a></li>
@@ -79,12 +66,13 @@
 		</div>
 	</nav>
 
-	<!-- Home Section-->
+	<!-- Home Section -->
 	<section id="home"
-		class="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white flex items-center justify-center px-6">
+		class="relative min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white flex items-center justify-center px-4 sm:px-6 py-12">
+
 		<!-- Scrolling Text Bar -->
 		<div
-			class="w-full h-8 bg-gradient-to-r from-gray-900 via-zinc-900 to-gray-900 absolute bottom-0 flex items-center overflow-hidden">
+			class="w-full h-8 bg-gradient-to-r from-gray-900 via-zinc-900 to-gray-900 absolute bottom-0 flex items-center overflow-hidden z-10">
 			<div id="scrolling-text"
 				class="flex whitespace-nowrap text-white font-bold font-mono uppercase text-sm sm:text-base md:text-lg"
 				style="animation: scroll-text 20s linear infinite;">
@@ -93,31 +81,34 @@
 		</div>
 
 		<!-- Main Content Container -->
-		<div class="max-w-7xl w-full flex flex-col lg:flex-row-reverse items-center gap-10">
-			<!-- Profile & Socials -->
-			<div class="rounded-2xl p-4 flex flex-col items-center">
-				<img src="asset/PNG/circle-image.png" alt="Keneth Gonzales"
-					class="w-64 h-64 sm:w-80 sm:h-80 lg:w-[500px] lg:h-auto rounded-full object-cover border-2 border-gray-700 shadow-[0_0_60px_rgba(255,255,255,0.20)]" />
+		<div class="max-w-7xl w-full flex flex-col lg:flex-row-reverse items-center gap-10 lg:gap-16 relative z-0">
 
-				<div class="flex gap-6 mt-6">
-					<a href="https://facebook.com" target="_blank">
+			<!-- Profile & Socials -->
+			<div class="flex flex-col items-center text-center lg:text-left">
+				<img src="asset/PNG/circle-image.png" alt="Keneth Gonzales"
+					class="w-48 h-48 sm:w-64 sm:h-64 lg:w-[420px] lg:h-[420px] rounded-full object-cover border-2 border-gray-700 shadow-[0_0_60px_rgba(255,255,255,0.20)] transition-all duration-300" />
+
+				<!-- Social Links -->
+				<div class="flex gap-6 mt-6 flex-wrap justify-center">
+					<a href="https://facebook.com" target="_blank" class="hover:scale-110 transition-transform">
 						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg" alt="Facebook"
-							class="w-10 h-10 hover:scale-110 transition-transform" />
+							class="w-8 h-8 sm:w-10 sm:h-10" />
 					</a>
-					<a href="https://instagram.com" target="_blank">
+					<a href="https://instagram.com" target="_blank" class="hover:scale-110 transition-transform">
 						<img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"
-							class="w-10 h-10 hover:scale-110 transition-transform" />
+							class="w-8 h-8 sm:w-10 sm:h-10" />
 					</a>
-					<a href="https://github.com" target="_blank">
-						<img src="asset/SVG/github.svg" alt="GitHub" class="w-10 h-10 hover:scale-110 transition-transform" />
+					<a href="https://github.com" target="_blank" class="hover:scale-110 transition-transform">
+						<img src="asset/SVG/github.svg" alt="GitHub" class="w-8 h-8 sm:w-10 sm:h-10" />
 					</a>
 				</div>
 			</div>
 
-			<div class="flex-1 text-center lg:text-left">
+			<!-- Intro & Skills -->
+			<div class="flex-1 text-center lg:text-left px-2">
 				<h1 class="text-2xl sm:text-3xl font-extrabold">Hi, I'm</h1>
 				<h1 class="text-4xl sm:text-5xl font-extrabold">KENETH GONZALES</h1>
-				<p class="mt-4 text-gray-300 max-w-xl mx-auto lg:mx-0">
+				<p class="mt-4 text-gray-300 max-w-xl mx-auto lg:mx-0 text-base sm:text-lg">
 					I'm a Computer Engineering graduate and passionate software developer. I stay current with tech trends,
 					take on freelance projects, and have a solid background in both software and hardware.
 				</p>
@@ -125,17 +116,17 @@
 				<!-- Skills -->
 				<div class="flex flex-wrap justify-center lg:justify-start gap-4 mt-6">
 					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"
-						class="w-10 h-10" />
+						class="w-8 h-8 sm:w-10 sm:h-10" />
 					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="VueJS"
-						class="w-10 h-10" />
+						class="w-8 h-8 sm:w-10 sm:h-10" />
 					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++"
-						class="w-10 h-10" />
+						class="w-8 h-8 sm:w-10 sm:h-10" />
 					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP"
-						class="w-10 h-10" />
+						class="w-8 h-8 sm:w-10 sm:h-10" />
 					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="ReactJS"
-						class="w-10 h-10" />
+						class="w-8 h-8 sm:w-10 sm:h-10" />
 					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="NodeJS"
-						class="w-10 h-10" />
+						class="w-8 h-8 sm:w-10 sm:h-10" />
 				</div>
 
 				<!-- Work & Education -->
@@ -167,7 +158,7 @@
 	<!-- About Section -->
 	<section id="about"
 		class="h-screen bg-white text-black flex items-center justify-center pt-20 border-t border-gray-300">
-		<h1 class="text-4xl font-bold">Projects</h1>
+		<h1 class="text-4xl font-bold">About</h1>
 	</section>
 
 	<!-- Projects Section -->
