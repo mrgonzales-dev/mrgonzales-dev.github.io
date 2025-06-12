@@ -20,11 +20,11 @@ function onScroll() {
 
   navbarLinks.forEach((link, idx) => {
     if (idx === currentSectionIndex) {
-      link.classList.add('text-black', 'font-semibold', 'underline');
-      link.classList.remove('text-gray-700');
+      link.classList.add('text-black', 'font-semibold');
+      link.classList.remove('text-gray-500');
     } else {
-      link.classList.remove('text-black', 'font-semibold', 'underline');
-      link.classList.add('text-gray-700');
+      link.classList.remove('text-black', 'font-semibold');
+      link.classList.add('text-gray-500');
     }
   });
 }

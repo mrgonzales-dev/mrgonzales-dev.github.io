@@ -9,7 +9,7 @@
 	<link rel="icon" type="image/png" href="asset/PNG/kglogo.png" />
 	<!-- Import Inter font -->
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 	<!-- Tailwind config to use Inter and custom blue -->
 	<script>
 		tailwind.config = {
@@ -51,17 +51,16 @@
 
 	<!-- Navbar -->
 	<nav id="navbar"
-		class="w-full rounded-xl fixed top-0 right-0 transition-all duration-1000 ease-in-out z-30 bg-zinc/30 backdrop-blur-md px-10 sm:px-10 py-3">
+		class="w-full rounded-xl fixed top-0 right-0 transition-all duration-1000 ease-in-out z-30 bg-zinc/30 backdrop-blur-md px-10 sm:px-10 py-2">
 		<div class="max-w-8xl mx-auto flex items-center justify-between">
-			<div class="flex items-center justify-between w-full">
-				<img id="navbar-logo" src="asset/SVG/mrg-logo-asset-white.svg" alt="MRG Logo" class="h-5 justify-right" />
-			</div>
-			<ul id="nav-menu"
-				class="flex flex-col sm:flex-row sm:space-x-8 space-y-4 sm:space-y-0 mt-4 sm:mt-0 sm:ml-10 text-center sm:text-left">
-				<li><a href="#home" class="block text-white hover:text-primary">Home</a></li>
-				<li><a href="#about" class="block text-white hover:text-primary">About</a></li>
-				<li><a href="#projects" class="block text-white hover:text-primary">Projects</a></li>
-				<li><a href="#contact" class="block text-white hover:text-primary">Contact</a></li>
+			<!-- Logo -->
+			<img id="navbar-logo" src="asset/SVG/mrg-logo-asset-white.svg" alt="MRG Logo" class="h-4" />
+
+			<!-- Nav Menu -->
+			<ul id="nav-menu" class="flex flex-row items-center space-x-8 text-center">
+				<li><a href="#home" class="block text-white font-medium hover:text-white hover:font-bold">Home</a></li>
+				<li><a href="#projects" class="block text-white font-medium hover:text-white hover:font-bold">Projects</a></li>
+				<li><a href="#contact" class="block text-white font-medium hover:text-white hover:font-bold">Contact</a></li>
 			</ul>
 		</div>
 	</nav>
@@ -81,7 +80,7 @@
 		</div>
 
 		<!-- Main Content Container -->
-		<div class="max-w-7xl w-full flex flex-col lg:flex-row-reverse items-center gap-10 lg:gap-16 relative z-0">
+		<div class="max-w-7xl w-full flex flex-col lg:flex-row-reverse items-center gap-10 lg:gap-30 relative z-0">
 
 			<!-- Profile & Socials -->
 			<div class="flex flex-col items-center text-center lg:text-left">
@@ -108,25 +107,28 @@
 			<div class="flex-1 text-center lg:text-left px-2">
 				<h1 class="text-2xl sm:text-3xl font-extrabold">Hi, I'm</h1>
 				<h1 class="text-4xl sm:text-5xl font-extrabold">KENETH GONZALES</h1>
-				<p class="mt-4 text-gray-300 max-w-xl mx-auto lg:mx-0 text-base sm:text-lg">
+				<p class="mt-4 text-gray-300 max-w-3xl mx-auto lg:mx-0 text-base sm:text-lg">
 					I'm a Computer Engineering graduate and passionate software developer. I stay current with tech trends,
 					take on freelance projects, and have a solid background in both software and hardware.
 				</p>
 
 				<!-- Skills -->
-				<div class="flex flex-wrap justify-center lg:justify-start gap-4 mt-6">
-					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"
-						class="w-8 h-8 sm:w-10 sm:h-10" />
-					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="VueJS"
-						class="w-8 h-8 sm:w-10 sm:h-10" />
-					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++"
-						class="w-8 h-8 sm:w-10 sm:h-10" />
-					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP"
-						class="w-8 h-8 sm:w-10 sm:h-10" />
-					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="ReactJS"
-						class="w-8 h-8 sm:w-10 sm:h-10" />
-					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="NodeJS"
-						class="w-8 h-8 sm:w-10 sm:h-10" />
+				<div class="mt-6">
+					<h2 class="text-lg font-semibold mb-2 text-center lg:text-left">SKILLS</h2>
+					<div class="flex flex-wrap justify-center lg:justify-start gap-4">
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"
+							class="w-8 h-8 sm:w-10 sm:h-10" title="Python" />
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="VueJS"
+							class="w-8 h-8 sm:w-10 sm:h-10" title="Vue.js" />
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++"
+							class="w-8 h-8 sm:w-10 sm:h-10" title="C++" />
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP"
+							class="w-8 h-8 sm:w-10 sm:h-10" title="PHP" />
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="ReactJS"
+							class="w-8 h-8 sm:w-10 sm:h-10" title="ReactJS" />
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="NodeJS"
+							class="w-8 h-8 sm:w-10 sm:h-10" title="Node.js" />
+					</div>
 				</div>
 
 				<!-- Work & Education -->
@@ -151,14 +153,20 @@
 						</p>
 					</div>
 				</div>
+
+				<!-- Buttons -->
+				<div class="flex flex-col sm:flex-row justify-center lg:justify-start mt-5 gap-5 text-left">
+					<button class="flex items-center gap-2 border text-black bg-white rounded-xl py-2 px-5">
+						<i class="fas fa-file-alt"></i> Resume
+					</button>
+					<button class="flex items-center gap-2 border rounded-xl py-2 px-5 text-white">
+						<i class="fas fa-paper-plane"></i> Let's Talk
+					</button>
+				</div>
+
+
 			</div>
 		</div>
-	</section>
-
-	<!-- About Section -->
-	<section id="about"
-		class="h-screen bg-white text-black flex items-center justify-center pt-20 border-t border-gray-300">
-		<h1 class="text-4xl font-bold">About</h1>
 	</section>
 
 	<!-- Projects Section -->
