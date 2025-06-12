@@ -1,12 +1,12 @@
 // Load projects.json and inject cards
-fetch('projects/projects.json')
+fetch('./public/projects/projects.json')
   .then(response => response.json())
   .then(projects => {
     const grid = document.getElementById('projects-grid');
 
     projects.forEach(project => {
       const card = document.createElement('div');
-      card.className = 'bg-zinc-800 border border-gray-700 rounded-2xl shadow-md p-6 flex flex-col justify-between transition-transform hover:scale-[1.02]';
+      card.className = 'border border-white rounded-2xl shadow-md p-6 flex flex-col justify-between transition-transform hover:scale-[1.02]';
 
       card.innerHTML = `
         <img src="${project.image}" alt="${project.title}" class="rounded-xl mb-4 object-cover h-40 w-full">
@@ -15,7 +15,9 @@ fetch('projects/projects.json')
           <p class="text-gray-300 text-sm mb-4">${project.description}</p>
         </div>
         <div class="mt-auto">
-          <a href="${project.codeLink}" target="_blank" class="inline-block mt-4 px-4 py-2 bg-white text-black rounded-xl hover:bg-gray-300 transition-colors text-sm font-medium">
+          <a href="${project.codelink}" target="_blank"
+            class="inline-flex items-center gap-2 mt-4 px-4 py-2 bg-gradient-to-r from-violet-500 to-purple-700 text-white rounded-xl hover:from-purple-600 hover:to-indigo-700 transition-all text-sm font-medium shadow-lg">
+            <i class="fas fa-code"></i>
             View Code
           </a>
         </div>
