@@ -1,0 +1,20 @@
+[
+	{
+		"title": "Sample1",
+		"description": "Sample Sample Sample Sample",
+		"image": "https://via.placeholder.com/600x300?text=Portfolio+Site",
+		"codeLink": "https://github.com/yourusername/portfolio"
+	},
+	{
+		"title": "Sample2",
+		"description": "Sample Sample Sample Sample",
+		"image": "https://via.placeholder.com/600x300?text=Portfolio+Site",
+		"codeLink": "https://github.com/yourusername/portfolio"
+	},
+	{
+		"title": "Sample3",
+		"description": "Sample Sample Sample Sample",
+		"image": "https://via.placeholder.com/600x300?text=Portfolio+Site",
+		"codeLink": "https://github.com/yourusername/portfolio"
+	}
+]
