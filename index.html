@@ -59,10 +59,10 @@
 
 	<!-- Navbar -->
 	<nav id="navbar"
-		class="rounded-xl fixed top-0 right-0  transition-all duration-1000 ease-in-out z-30 bg-white/30 backdrop-blur-md px-5 sm:px-5 py-3">
+		class="w-full rounded-xl fixed top-0 right-0  transition-all duration-1000 ease-in-out z-30 bg-zinc/30 backdrop-blur-md px-10 sm:px-10 py-3">
 		<div class="max-w-8xl mx-auto flex items-center justify-between">
 			<div class="flex items-center justify-between w-full">
-				<img id="navbar-logo" src="asset/SVG/mrg-logo-asset.svg" alt="MRG Logo" class="h-5 justify-right" />
+				<img id="navbar-logo" src="asset/SVG/mrg-logo-asset-white.svg" alt="MRG Logo" class="h-5 justify-right" />
 				<button id="nav-toggle" class="sm:hidden text-black focus:outline-none">
 					<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
 						<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
@@ -71,18 +71,17 @@
 			</div>
 			<ul id="nav-menu"
 				class="hidden sm:flex sm:flex-row flex-col sm:space-x-8 space-y-4 sm:space-y-0 mt-4 sm:mt-0 sm:ml-10 text-center sm:text-left">
-				<li><a href="#home" class="block text-black hover:text-primary">Home</a></li>
-				<li><a href="#about" class="block text-black hover:text-primary">About</a></li>
-				<li><a href="#projects" class="block text-black hover:text-primary">Projects</a></li>
-				<li><a href="#contact" class="block text-black hover:text-primary">Contact</a></li>
+				<li><a href="#home" class="block text-white hover:text-primary">Home</a></li>
+				<li><a href="#about" class="block text-white hover:text-primary">About</a></li>
+				<li><a href="#projects" class="block text-white hover:text-primary">Projects</a></li>
+				<li><a href="#contact" class="block text-white hover:text-primary">Contact</a></li>
 			</ul>
 		</div>
 	</nav>
 
 	<!-- Home Section-->
 	<section id="home"
-		class="overflow-hidden min-h-screen px-4 sm:px-6 bg-gradient-to-br from-white via-gray-50 to-gray-300 flex justify-center items-center relative">
-
+		class="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white flex items-center justify-center px-6">
 		<!-- Scrolling Text Bar -->
 		<div
 			class="w-full h-8 bg-gradient-to-r from-gray-900 via-zinc-900 to-gray-900 absolute bottom-0 flex items-center overflow-hidden">
@@ -94,44 +93,7 @@
 		</div>
 
 		<!-- Main Content Container -->
-		<div
-			class="max-w-8xl w-full flex h-screen flex-col items-center justify-center gap-8 lg:flex-row lg:justify-between">
-
-			<!-- Image (hidden on mobile) -->
-			<div class="hidden lg:flex flex-1 justify-center">
-				<img src="asset/PNG/right-side-halfbody-asset.png" alt="Keneth Gonzales"
-					class="w-full max-w-[570px] object-contain" />
-			</div>
-
-			<!-- Text Content -->
-			<div class="text-center px-2 flex-1 flex flex-col items-center justify-center lg:items-start">
-				<p class="text-3xl sm:text-3xl text-gray-900">Hi, I'm</p>
-				<h1 class="text-5xl sm:text-6xl lg:text-6xl font-extrabold text-gray-900 mt-2">
-					KENETH GONZALES
-				</h1>
-				<p class="text-xl sm:text-2xl text-gray-700 mt-2">Software Developer</p>
-
-				<!-- Buttons -->
-				<div class="mt-6 flex flex-col sm:flex-row gap-4">
-					<a href="#projects"
-						class="bg-black text-white px-6 py-2 rounded-full font-medium hover:bg-gray-800 transition">
-						PROJECTS &lt;/&gt;
-					</a>
-					<a href="#contact"
-						class="border-2 border-black text-black px-6 py-2 rounded-full font-medium hover:bg-black hover:text-white transition">
-						LET’S TALK
-					</a>
-				</div>
-			</div>
-
-		</div>
-	</section>
-
-	<!-- About Section -->
-	<section id="about"
-		class="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white flex items-center justify-center px-6 py-20">
 		<div class="max-w-7xl w-full flex flex-col lg:flex-row-reverse items-center gap-10">
-
 			<!-- Profile & Socials -->
 			<div class="rounded-2xl p-4 flex flex-col items-center">
 				<img src="asset/PNG/circle-image.png" alt="Keneth Gonzales"
@@ -152,8 +114,8 @@
 				</div>
 			</div>
 
-			<!-- About Content -->
 			<div class="flex-1 text-center lg:text-left">
+				<h1 class="text-2xl sm:text-3xl font-extrabold">Hi, I'm</h1>
 				<h1 class="text-4xl sm:text-5xl font-extrabold">KENETH GONZALES</h1>
 				<p class="mt-4 text-gray-300 max-w-xl mx-auto lg:mx-0">
 					I'm a Computer Engineering graduate and passionate software developer. I stay current with tech trends,
@@ -200,6 +162,12 @@
 				</div>
 			</div>
 		</div>
+	</section>
+
+	<!-- About Section -->
+	<section id="about"
+		class="h-screen bg-white text-black flex items-center justify-center pt-20 border-t border-gray-300">
+		<h1 class="text-4xl font-bold">Projects</h1>
 	</section>
 
 	<!-- Projects Section -->
