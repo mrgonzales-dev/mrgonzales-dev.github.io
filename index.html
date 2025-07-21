@@ -1,200 +1,312 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mrgonzales-dev</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" href="asset/PNG/kglogo.png" />
+    <!-- Import Inter font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <!-- Tailwind config to use Inter and custom blue -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+            colors: {
+              primary: "#1e40af", // deep blue (tailwind blue-900)
+            },
+          },
+        },
+      };
+    </script>
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>mrgonzales-dev</title>
-	<script src="https://cdn.tailwindcss.com"></script>
-	<link rel="icon" type="image/png" href="asset/PNG/kglogo.png" />
-	<!-- Import Inter font -->
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-	<!-- Tailwind config to use Inter and custom blue -->
-	<script>
-		tailwind.config = {
-			theme: {
-				extend: {
-					fontFamily: {
-						sans: ['Inter', 'sans-serif'],
-					},
-					colors: {
-						primary: '#1e40af' // deep blue (tailwind blue-900)
-					}
-				}
-			}
-		}
-	</script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
 
-	<style>
-		html {
-			scroll-behavior: smooth;
-		}
+      @keyframes scroll-text {
+        0% {
+          transform: translateX(0%);
+        }
 
-		@keyframes scroll-text {
-			0% {
-				transform: translateX(0%);
-			}
+        100% {
+          transform: translateX(-50%);
+        }
+      }
 
-			100% {
-				transform: translateX(-50%);
-			}
-		}
+      .animate-scroll-text {
+        animation: scroll-text 20s linear infinite;
+      }
+    </style>
+  </head>
 
-		.animate-scroll-text {
-			animation: scroll-text 20s linear infinite;
-		}
-	</style>
-</head>
+  <body class="font-sans bg-white text-black">
+    <!-- Navbar -->
+    <nav
+      id="navbar"
+      class="w-full rounded-xl fixed top-0 right-0 transition-all duration-1000 ease-in-out z-30 bg-zinc/30 backdrop-blur-md px-2 sm:px-10 py-2"
+    >
+      <div class="max-w-8xl mx-auto flex items-center justify-between">
+        <!-- Logo -->
+        <img
+          id="navbar-logo"
+          src="asset/SVG/mrg-logo-asset-white.svg"
+          alt="MRG Logo"
+          class="h-4"
+        />
 
-<body class="font-sans bg-white text-black">
+        <!-- Navbar Items -->
+        <ul
+          id="nav-menu"
+          class="hidden sm:flex flex-row items-center space-x-8 text-center"
+        >
+          <li>
+            <a
+              href="#home"
+              class="block text-white font-medium hover:text-white hover:font-bold"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="#projects"
+              class="block text-white font-medium hover:text-white hover:font-bold"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contact"
+              class="block text-white font-medium hover:text-white hover:font-bold"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-	<!-- Navbar -->
-	<nav id="navbar"
-		class="w-full rounded-xl fixed top-0 right-0 transition-all duration-1000 ease-in-out z-30 bg-zinc/30 backdrop-blur-md px-2 sm:px-10 py-2">
-		<div class="max-w-8xl mx-auto flex items-center justify-between">
-			<!-- Logo -->
-			<img id="navbar-logo" src="asset/SVG/mrg-logo-asset-white.svg" alt="MRG Logo" class="h-4" />
+    <!-- Home Section -->
+    <section
+      id="home"
+      class="relative min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white flex items-center justify-center px-4 sm:px-6 py-12"
+    >
+      <!-- Scrolling Text Bar -->
+      <div
+        class="w-full h-8 bg-gradient-to-r from-gray-900 via-zinc-900 to-gray-900 absolute bottom-0 flex items-center overflow-hidden z-10"
+      >
+        <div
+          id="scrolling-text"
+          class="flex whitespace-nowrap text-white font-bold font-mono uppercase text-sm sm:text-base md:text-lg"
+          style="animation: scroll-text 20s linear infinite"
+        >
+          <!-- JavaScript will insert repeated spans here -->
+        </div>
+      </div>
 
-			<!-- Navbar Items -->
-			<ul id="nav-menu" class="hidden sm:flex flex-row items-center space-x-8 text-center">
-				<li><a href="#home" class="block text-white font-medium hover:text-white hover:font-bold">Home</a></li>
-				<li><a href="#projects" class="block text-white font-medium hover:text-white hover:font-bold">Projects</a></li>
-				<li><a href="#contact" class="block text-white font-medium hover:text-white hover:font-bold">Contact</a></li>
-			</ul>
-		</div>
-	</nav>
+      <!-- Main Content Container -->
+      <div
+        class="max-w-7xl w-full flex flex-col lg:flex-row-reverse items-center gap-10 lg:gap-30 relative z-0"
+      >
+        <!-- Profile & Socials -->
+        <div class="flex flex-col items-center text-center lg:text-left">
+          <img
+            src="asset/PNG/circle-image.png"
+            alt="Keneth Gonzales"
+            class="w-48 h-48 sm:w-64 sm:h-64 lg:w-[420px] lg:h-[420px] rounded-full object-cover border-2 border-white-700 shadow-[0_0_60px_rgba(6,182,212,0.4)] transition-all duration-300"
+          />
 
-	<!-- Home Section -->
-	<section id="home"
-		class="relative min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white flex items-center justify-center px-4 sm:px-6 py-12">
+          <!-- Social Links -->
+          <div class="flex gap-6 mt-6 flex-wrap justify-center">
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              class="hover:scale-110 transition-transform"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg"
+                alt="Facebook"
+                class="w-8 h-8 sm:w-10 sm:h-10"
+              />
+            </a>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              class="hover:scale-110 transition-transform"
+            >
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
+                alt="Instagram"
+                class="w-8 h-8 sm:w-10 sm:h-10"
+              />
+            </a>
+            <a
+              href="https://github.com"
+              target="_blank"
+              class="hover:scale-110 transition-transform"
+            >
+              <img
+                src="asset/SVG/github.svg"
+                alt="GitHub"
+                class="w-8 h-8 sm:w-10 sm:h-10"
+              />
+            </a>
+          </div>
+        </div>
 
-		<!-- Scrolling Text Bar -->
-		<div
-			class="w-full h-8 bg-gradient-to-r from-gray-900 via-zinc-900 to-gray-900 absolute bottom-0 flex items-center overflow-hidden z-10">
-			<div id="scrolling-text"
-				class="flex whitespace-nowrap text-white font-bold font-mono uppercase text-sm sm:text-base md:text-lg"
-				style="animation: scroll-text 20s linear infinite;">
-				<!-- JavaScript will insert repeated spans here -->
-			</div>
-		</div>
+        <!-- Intro & Skills -->
+        <div class="flex-1 text-center lg:text-left px-2">
+          <div class="text-center lg:text-left">
+            <h1
+              class="text-2xl sm:text-3xl font-thin flex justify-center lg:justify-start items-center gap-2"
+            >
+              Hi, I'm 👋
+            </h1>
+            <h1 class="text-4xl sm:text-5xl font-extrabold">KENETH GONZALES</h1>
+          </div>
+          <p
+            class="mt-4 text-gray-300 max-w-3xl mx-auto lg:mx-0 text-base sm:text-lg"
+          >
+            I'm a Computer Engineering graduate and passionate software
+            developer. I stay current with tech trends, take on freelance
+            projects, and have a solid background in both software and hardware.
+          </p>
 
-		<!-- Main Content Container -->
-		<div class="max-w-7xl w-full flex flex-col lg:flex-row-reverse items-center gap-10 lg:gap-30 relative z-0">
+          <!-- Skills -->
+          <div class="mt-6">
+            <h2 class="text-lg font-semibold mb-2 text-center lg:text-left">
+              SKILLS
+            </h2>
+            <div class="flex flex-wrap justify-center lg:justify-start gap-4">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                alt="Python"
+                class="w-8 h-8 sm:w-10 sm:h-10"
+                title="Python"
+              />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg"
+                alt="VueJS"
+                class="w-8 h-8 sm:w-10 sm:h-10"
+                title="Vue.js"
+              />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
+                alt="C++"
+                class="w-8 h-8 sm:w-10 sm:h-10"
+                title="C++"
+              />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"
+                alt="PHP"
+                class="w-8 h-8 sm:w-10 sm:h-10"
+                title="PHP"
+              />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                alt="ReactJS"
+                class="w-8 h-8 sm:w-10 sm:h-10"
+                title="ReactJS"
+              />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                alt="NodeJS"
+                class="w-8 h-8 sm:w-10 sm:h-10"
+                title="Node.js"
+              />
+            </div>
+          </div>
 
-			<!-- Profile & Socials -->
-			<div class="flex flex-col items-center text-center lg:text-left">
+          <!-- Work & Education -->
+          <div
+            class="flex flex-col sm:flex-row justify-center lg:justify-start mt-10 gap-8 text-left"
+          >
+            <!-- Work Experience -->
+            <div class="w-full sm:w-1/2">
+              <h2 class="text-lg font-semibold mb-2">WORK EXPERIENCES</h2>
+              <div class="text-sm text-gray-300 space-y-4">
+                <p>
+                  <strong>FULL STACK ENGINEER</strong><br />Pixel8 Web Solution
+                  and Consultancy
+                </p>
+                <p>
+                  <strong>GRAPHIC DESIGN</strong><br />Ownstyle Printing and
+                  Design Services
+                </p>
+                <p>
+                  <strong>FREELANCING</strong><br />Commission-Based Projects
+                </p>
+              </div>
+            </div>
 
-				<img src="asset/PNG/circle-image.png" alt="Keneth Gonzales"
-					class="w-48 h-48 sm:w-64 sm:h-64 lg:w-[420px] lg:h-[420px] rounded-full object-cover border-2 border-white-700 shadow-[0_0_60px_rgba(6,182,212,0.4)] transition-all duration-300" />
+            <!-- Education -->
+            <div class="w-full sm:w-1/2">
+              <h2 class="text-lg font-semibold mb-2">EDUCATION</h2>
+              <p class="text-sm text-gray-300">
+                <strong>BS in COMPUTER ENGINEERING</strong><br />
+                Bicol University Polangui<br />
+                2021–2025
+              </p>
+            </div>
+          </div>
 
-				<!-- Social Links -->
-				<div class="flex gap-6 mt-6 flex-wrap justify-center">
-					<a href="https://facebook.com" target="_blank" class="hover:scale-110 transition-transform">
-						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg" alt="Facebook"
-							class="w-8 h-8 sm:w-10 sm:h-10" />
-					</a>
-					<a href="https://instagram.com" target="_blank" class="hover:scale-110 transition-transform">
-						<img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"
-							class="w-8 h-8 sm:w-10 sm:h-10" />
-					</a>
-					<a href="https://github.com" target="_blank" class="hover:scale-110 transition-transform">
-						<img src="asset/SVG/github.svg" alt="GitHub" class="w-8 h-8 sm:w-10 sm:h-10" />
-					</a>
-				</div>
-			</div>
+          <!-- Buttons -->
+          <div
+            class="flex flex-col sm:flex-row justify-center lg:justify-start mt-5 gap-5 text-left"
+          >
+            <a
+              href="public/resume/KENNETH GONZALES - RESUME.pdf"
+              download
+              class="border text-black bg-white rounded-xl py-2 px-5 flex items-center gap-2"
+            >
+              <i class="fas fa-file-alt"></i> Resume
+            </a>
+            <a
+              href="#contact"
+              class="border text-white rounded-xl py-2 px-5 flex items-center gap-2"
+            >
+              <i class="fas fa-paper-plane"></i> Let's Talk
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-			<!-- Intro & Skills -->
-			<div class="flex-1 text-center lg:text-left px-2">
-				<div class="text-center lg:text-left">
-					<h1 class="text-2xl sm:text-3xl font-thin flex justify-center lg:justify-start items-center gap-2">
-						Hi, I'm 👋
-					</h1>
-					<h1 class="text-4xl sm:text-5xl font-extrabold">KENETH GONZALES</h1>
-				</div>
-				<p class="mt-4 text-gray-300 max-w-3xl mx-auto lg:mx-0 text-base sm:text-lg">
-					I'm a Computer Engineering graduate and passionate software developer. I stay current with tech trends,
-					take on freelance projects, and have a solid background in both software and hardware.
-				</p>
+    <!-- <!-- projects -->
+    -->
+    <!-- <section id="projects" -->
+    <!-- 	class="min-h-screen bg-gradient-to-b from-gray-950 to-black text-white pt-16 px-6 py-6 sm:px-15 border-t border-gray-700"> -->
+    <!-- 	<h1 class="text-4xl font-bold text-center mb-10 flex items-center justify-center gap-3"> -->
+    <!-- 		<i class="fas fa-folder-open text-violet-500"></i> -->
+    <!-- 		Projects -->
+    <!-- 	</h1> -->
+    <!-- 	<div id="projects-grid" class="grid gap-8 md:grid-cols-2 lg:grid-cols-3"> -->
+    <!-- 		<!-- projects will be injected here -->
+    -->
+    <!-- 	</div> -->
+    <!-- </section> -->
 
-				<!-- Skills -->
-				<div class="mt-6">
-					<h2 class="text-lg font-semibold mb-2 text-center lg:text-left">SKILLS</h2>
-					<div class="flex flex-wrap justify-center lg:justify-start gap-4">
-						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"
-							class="w-8 h-8 sm:w-10 sm:h-10" title="Python" />
-						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="VueJS"
-							class="w-8 h-8 sm:w-10 sm:h-10" title="Vue.js" />
-						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++"
-							class="w-8 h-8 sm:w-10 sm:h-10" title="C++" />
-						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP"
-							class="w-8 h-8 sm:w-10 sm:h-10" title="PHP" />
-						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="ReactJS"
-							class="w-8 h-8 sm:w-10 sm:h-10" title="ReactJS" />
-						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="NodeJS"
-							class="w-8 h-8 sm:w-10 sm:h-10" title="Node.js" />
-					</div>
-				</div>
+    <!-- <!-- Contact Section -->
+    -->
+    <!-- <section -->
+    <!--   id="contact" -->
+    <!--   class="h-screen bg-white text-black flex items-center justify-center pt-20 border-t border-gray-300" -->
+    <!-- > -->
+    <!--   <h1 class="text-4xl font-bold">Contact</h1> -->
+    <!-- </section> -->
 
-				<!-- Work & Education -->
-				<div class="flex flex-col sm:flex-row justify-center lg:justify-start mt-10 gap-8 text-left">
-					<!-- Work Experience -->
-					<div class="w-full sm:w-1/2">
-						<h2 class="text-lg font-semibold mb-2">WORK EXPERIENCES</h2>
-						<div class="text-sm text-gray-300 space-y-4">
-							<p><strong>FULL STACK ENGINEER</strong><br />Pixel8 Web Solution and Consultancy</p>
-							<p><strong>GRAPHIC DESIGN</strong><br />Ownstyle Printing and Design Services</p>
-							<p><strong>FREELANCING</strong><br />Commission-Based Projects</p>
-						</div>
-					</div>
-
-					<!-- Education -->
-					<div class="w-full sm:w-1/2">
-						<h2 class="text-lg font-semibold mb-2">EDUCATION</h2>
-						<p class="text-sm text-gray-300">
-							<strong>BS in COMPUTER ENGINEERING</strong><br />
-							Bicol University Polangui<br />
-							2021–2025
-						</p>
-					</div>
-				</div>
-
-				<!-- Buttons -->
-				<div class="flex flex-col sm:flex-row justify-center lg:justify-start mt-5 gap-5 text-left">
-					<a href="public/resume/KENNETH GONZALES - RESUME.pdf" download
-						class="border text-black bg-white rounded-xl py-2 px-5 flex items-center gap-2">
-						<i class="fas fa-file-alt"></i> Resume
-					</a>
-					<a href="#contact" class="border text-white rounded-xl py-2 px-5 flex items-center gap-2">
-						<i class="fas fa-paper-plane"></i> Let's Talk
-					</a>
-				</div>
-
-
-			</div>
-		</div>
-	</section>
-
-	<!-- projects -->
-	<section id="projects"
-		class="min-h-screen bg-gradient-to-b from-gray-950 to-black text-white pt-16 px-6 py-6 sm:px-15 border-t border-gray-700">
-		<h1 class="text-4xl font-bold text-center mb-10 flex items-center justify-center gap-3">
-			<i class="fas fa-folder-open text-violet-500"></i>
-			Projects
-		</h1>
-		<div id="projects-grid" class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-			<!-- projects will be injected here -->
-		</div>
-	</section>
-
-	<!-- Contact Section -->
-	<section id="contact"
-		class="h-screen bg-white text-black flex items-center justify-center pt-20 border-t border-gray-300">
-		<h1 class="text-4xl font-bold">Contact</h1>
-	</section>
-
-	<script src="projectInjection.js"></script>
-	<script src="script.js"></script>
-</body>
-
+    <script src="projectInjection.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
